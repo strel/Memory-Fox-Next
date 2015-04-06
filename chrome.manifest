@@ -1,0 +1,9 @@
+content	memfx	chrome/content/
+
+skin	memfx	classic/1.0		chrome/skin/
+locale	memfx	en-US			chrome/locale/en-US/
+locale	memfx	es				chrome/locale/es/
+locale	memfx	zh-CN			chrome/locale/zh-CN/
+
+overlay	chrome://browser/content/browser.xul				chrome://memfx/content/mfxOverlay.xul
+style	chrome://global/content/customizeToolbar.xul		chrome://memfx/skin/mfxOverlay.css

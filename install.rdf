@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+ 
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>memoryfoxnext@idevfh.im</em:id>
+    <em:name>Memory Fox Next</em:name>
+    <em:version>7.4.1</em:version>
+    <em:creator>IDEVFH</em:creator>
+	<em:contributor>strel</em:contributor>
+    <em:description>A Mozilla Firefox Memory Recovery and Retention Add-On</em:description>
+    <em:homepageURL>https://addons.mozilla.org/firefox/addon/memory-fox-next/</em:homepageURL>
+    <em:iconURL>chrome://memfx/skin/icons/toolbar-button-on.png</em:iconURL>
+    <em:optionsURL>chrome://memfx/content/mfxOptions.xul</em:optionsURL>
+	<em:unpack>true</em:unpack>
+	<em:type>2</em:type>
+	
+    <em:targetApplication>
+		<Description>
+			<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+			<em:minVersion>1.5</em:minVersion>
+			<em:maxVersion>40.0</em:maxVersion>
+		</Description>
+    </em:targetApplication>
+	
+	<em:localized>
+		<Description>
+			<em:locale>es</em:locale>
+			<em:name>Memory Fox Next</em:name>
+			<em:description>Un complemento de Mozilla Firefox para la retención y recuperación de memoria</em:description>
+			<em:translator>strel</em:translator>
+		</Description>
+	</em:localized>
+	<em:localized>
+		<Description>
+			<em:locale>zn-CN</em:locale>
+			<em:name>Memory Fox Next</em:name>
+			<em:description>Firefox 内存恢复组件 Memory Fox Next</em:description>
+			<em:translator>阳光の碎片</em:translator>
+		</Description>
+	</em:localized>
+	
+  </Description>
+</RDF>

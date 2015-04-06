@@ -1,0 +1,38 @@
+<!ENTITY prefwindow.title "Memory Fox Next Options">
+<!ENTITY prefwindow.startup "Memory Fox Next startup setting">
+<!ENTITY prefwindow.notif "Below selections will allow Memory Fox Next event notification to be Alert Popup Display Only or Audio Playback Only">
+<!ENTITY prefwindow.activateMFDisplayEvents "Activate Memory Fox Next's Event Notifications">
+<!ENTITY prefwindow.activateVisualAcc "Activate JAWS Audio Playback">
+<!ENTITY prefwindow.trecovery "Wait times before activating memory recovery">
+<!ENTITY prefwindow.zerom "0 Minutes">
+<!ENTITY prefwindow.onem "1 Minute">
+<!ENTITY prefwindow.twom "2 Minutes">
+<!ENTITY prefwindow.threem "3 Minutes">
+<!ENTITY prefwindow.fivem "5 Minutes">
+<!ENTITY prefwindow.tenm "10 Minutes">
+<!ENTITY prefwindow.fifteenm "15 Minutes">
+<!ENTITY prefwindow.thirtym "30 Minutes">
+<!ENTITY prefwindow.fortyfivem "45 Minutes">
+<!ENTITY prefwindow.sixtym "60 Minutes">
+<!ENTITY prefwindow.gsettings "Memory Fox Next general settings">
+<!ENTITY prefwindow.tselections "Wait times between Browser Tab selections">
+<!ENTITY prefwindow.backgtimer "Memory Fox Next background Periodic Timer, for when Firefox is running or idle">
+<!ENTITY prefwindow.tsabgrecovery "Wait times before starting standalone background memory recovery">
+<!ENTITY prefwindow.eventlog "Memory Fox Next Event Log Setting">
+<!ENTITY prefwindow.afom "Notes from the Event Viewer you should see under the Source column, listed with the event name AFOM">
+<!ENTITY prefwindow.afomvalues "1. Requirement: [ Start AFOM ],  2. Action: [ Tab Selected ],  3. Requirement: [ PeriodicRAM ], 4. Requirement: [ Stop AFOM ]">
+<!ENTITY prefwindow.activateMFXEventLogging "Activate Event Logging For Memory Fox Next">
+<!ENTITY prefwindow.app_1 "Firefox Browser">
+<!ENTITY prefwindow.activateMFXonStartup "Automatically Run Memory Fox Next When Launching 1st Browser">
+<!ENTITY prefwindow.isMFXRunning "Memory Fox Next Is Running">
+<!ENTITY prefwindow.tabDelay "Delay Memory Recovery When Selecting Between Browser Tabs">
+<!ENTITY prefwindow.gsettings "Global Memory Recovery Settings">
+<!ENTITY prefwindow.global "Memory Recovery For Global Processes">
+<!ENTITY prefwindow.recoverall "Provide memory recovery for all running application processes shown in Task Manager">
+<!ENTITY prefwindow.blacklist "Black-List Processes">
+<!ENTITY prefwindow.addproc "Add Process Name">
+<!ENTITY prefwindow.remproc "Remove Process From List">
+<!ENTITY prefwindow.startupDelay "Delay Memory Recovery Until All Web Pages Have Loaded">
+<!ENTITY prefwindow.primaryTimeout "Background Memory Recovery ( Primary ) Timeout">
+<!ENTITY prefwindow.currentVersion "0.0">
+<!ENTITY pane1.title "Memory Fox Next Addon preferences">

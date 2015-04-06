@@ -1,0 +1,38 @@
+<!ENTITY prefwindow.title "Opciones de Memory Fox Next">
+<!ENTITY prefwindow.startup "Configuración de arranque de Memory Fox Next">
+<!ENTITY prefwindow.notif "Selección para que las notificaciones de eventos de Memory Fox Next consistan sólo en mostrar un cuadro de diálogo, o sólo en reproducir un audio">
+<!ENTITY prefwindow.activateMFDisplayEvents "Activar notificaciones de eventos de Memory Fox Next">
+<!ENTITY prefwindow.activateVisualAcc "Activar reproducción de audio JAWS">
+<!ENTITY prefwindow.trecovery "Tiempos de espera antes de activar la recuperación de memoria">
+<!ENTITY prefwindow.zerom "0 minutos">
+<!ENTITY prefwindow.onem "1 minuto">
+<!ENTITY prefwindow.twom "2 minutos">
+<!ENTITY prefwindow.threem "3 minutos">
+<!ENTITY prefwindow.fivem "5 minutos">
+<!ENTITY prefwindow.tenm "10 minutos">
+<!ENTITY prefwindow.fifteenm "15 minutos">
+<!ENTITY prefwindow.thirtym "30 minutos">
+<!ENTITY prefwindow.fortyfivem "45 minutos">
+<!ENTITY prefwindow.sixtym "60 minutos">
+<!ENTITY prefwindow.gsettings "Configuración general de Memory Fox Next">
+<!ENTITY prefwindow.tselections "Tiempos de espera entre selecciones de pestañas del navegador">
+<!ENTITY prefwindow.backgtimer "Temporizador periódico en segundo plano de Memory Fox Next, discrimina cuándo Firefox está activo u ocioso">
+<!ENTITY prefwindow.tsabgrecovery "Tiempos de espera antes de iniciar la recuperación independiente en segundo plano de memoria">
+<!ENTITY prefwindow.eventlog "Configuración de registro de eventos de Memory Fox Next">
+<!ENTITY prefwindow.afom "Anotaciones del Visor de Eventos que debería ver bajo la columna Fuente, listadas con el nombre de evento AFOM">
+<!ENTITY prefwindow.afomvalues "1. Requirement: [ Start AFOM ],  2. Action: [ Tab Selected ],  3. Requirement: [ PeriodicRAM ], 4. Requirement: [ Stop AFOM ]">
+<!ENTITY prefwindow.activateMFXEventLogging "Activar registro de eventos para Memory Fox Next">
+<!ENTITY prefwindow.app_1 "Navegador Firefox">
+<!ENTITY prefwindow.activateMFXonStartup "Ejecutar automáticamente Memory Fox Next al iniciar el navegador por primera vez">
+<!ENTITY prefwindow.isMFXRunning "Memory Fox Next está ejecutándose">
+<!ENTITY prefwindow.tabDelay "Retrasar la recuperación de memoria al seleccionar entre pestañas del navegador">
+<!ENTITY prefwindow.gsettings "Configuración de recuperación de memoria global">
+<!ENTITY prefwindow.global "Recuperación de memoria para los procesos globales">
+<!ENTITY prefwindow.recoverall "Proporcionar recuperación de memoria para todos los procesos corriendo que se muestran en el Administrador de Tareas">
+<!ENTITY prefwindow.blacklist "Procesos en lista negra">
+<!ENTITY prefwindow.addproc "Añadir nombre de proceso">
+<!ENTITY prefwindow.remproc "Eliminar nombre de proceso">
+<!ENTITY prefwindow.startupDelay "Retrasar recuperación de memoria hasta que todas las páginas web se hayan cargado">
+<!ENTITY prefwindow.primaryTimeout "Intervalo (principal) hasta la recuperación de memoria en segundo plano">
+<!ENTITY prefwindow.currentVersion "0.0">
+<!ENTITY pane1.title "Preferencias del complemento Memory Fox Next">

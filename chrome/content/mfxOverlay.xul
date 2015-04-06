@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="chrome://memfx/skin/mfxOverlay.css" ?>
+
+<!DOCTYPE window SYSTEM "chrome://memfx/locale/mfx.dtd">
+	<overlay id="memfx-browser-overlay"
+	  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://memfx/content/mfxOverlay.js" />
+	<script type="application/x-javascript">
+		<![CDATA[
+			window.addEventListener('load', function() { MemFXChrome.BOverly.init(); } , false);
+			window.addEventListener('unload', function() { MemFXChrome.BOverly.uninit(); }  , false);
+			window.addEventListener("keypress", function(e) { MemFXChrome.BOverly.onKeyPressed(e); }, false);
+		]]>
+	</script>
+	
+	<window id="main-window">
+	<popupset id="mainPopupSet"/>
+	</window>
+
+		  <menupopup id="menu_ToolsPopup">
+			<menu id="memfx-menu" label="&memfx.label.menu;" class="menu-iconic"
+				image="chrome://memfx/skin/icons/mem.png" 
+				insertafter="javascriptConsole,devToolsSeparator">
+					<menupopup id="memfx-popup-menu">
+
+						<menuitem id="memfx-activate" label="&memfx.label.open;"
+						  oncommand="{ MemFXChrome.BOverly.StartMF();}"/>
+						<menuitem id="memfx-deactivate" label="&memfx.label.close;" 
+						  oncommand="MemFXChrome.BOverly.StopMF();"/>
+						<menuseparator/>
+						<menuitem id="memfx-activate-g" label="&memfx.label2.open;"
+						  oncommand="{ MemFXChrome.BOverly.StartGlobalMF();}"/>
+						<menuitem id="memfx-deactivate-g" label="&memfx.label2.close;" 
+						  oncommand="MemFXChrome.BOverly.ResetGlobalMF();"/>
+  						<menuseparator/>
+						<menuitem id="memfx-options" label="&memfx.label.options;"
+						  oncommand="MemFXChrome.BOverly.optionsDialog();"/>
+						<menuitem id="memfx-options-g" label="&memfx.label.blacklist;"
+						  oncommand="MemFXChrome.BOverly.globalDialog();"/>
+						<menuitem id="memfx-restart" label="&memfx.label.restart;"
+						  oncommand="MemFXRunner.restartFF();"/>
+						<menuseparator/>
+						<menuitem id="memfx-homepage" label="&memfx.label.homepage;"
+						  oncommand="MemFXChrome.BOverly.goHome();"/>
+
+					</menupopup>
+			  </menu>
+		  </menupopup>
+	  
+		<popupset id="mainPopupSet">
+			<menupopup id="memory-fox-menu">
+				<menuitem id="memfx-s-activate" label="&memfx.label.open;" oncommand="{ MemFXChrome.BOverly.StartMF();}"/>
+				<menuitem id="memfx-s-deactivate" label="&memfx.label.close;" oncommand="MemFXChrome.BOverly.StopMF();"/>
+				<menuseparator/>
+				<menuitem id="memfx-s-activate-g" label="&memfx.label2.open;" oncommand="{ MemFXChrome.BOverly.StartGlobalMF();}"/>
+				<menuitem id="memfx-s-deactivate-g" label="&memfx.label2.close;" oncommand="MemFXChrome.BOverly.ResetGlobalMF();"/>
+				<menuseparator/>
+				<menuitem id="memfx-s-global" label="&memfx.label.options;" oncommand="MemFXChrome.BOverly.optionsDialog();" />
+				<menuitem id="memfx-s-options-g" label="&memfx.label.blacklist;" oncommand="MemFXChrome.BOverly.globalDialog();" />
+				<menuitem id="memfx-tbar-s-restart" label="&memfx.label.restart;" oncommand="{ MemFXRunner.restartFF();}"/>
+				<menuseparator/>
+				<menuitem id="memfx-s-homepage" label="&memfx.label.homepage;" oncommand="MemFXChrome.BOverly.goHome();"/>
+			</menupopup>
+		</popupset>
+		
+		<toolbarpalette id="BrowserToolbarPalette">
+				<toolbarbutton id="memfx-toolbar-button" type="menu" onmouseover="MemFXChrome.BOverly.onMouseTooltip()" tooltiptext="Activate Memory Fox To See Current WorkingSetSize" hidden="false">
+					<menupopup>
+						<menuitem id="memfx-tbar-s-activate" label="&memfx.label.open;" oncommand="{ MemFXChrome.BOverly.StartMF();}"/>
+						<menuitem id="memfx-tbar-s-deactivate" label="&memfx.label.close;" oncommand="{ MemFXChrome.BOverly.StopMF();}"/>
+						<menuseparator/>
+						<menuitem id="memfx-tbar-s-activate-g" label="&memfx.label2.open;" oncommand="{ MemFXChrome.BOverly.StartGlobalMF();}"/>
+						<menuitem id="memfx-tbar-s-deactivate-g" label="&memfx.label2.close;" oncommand="{ MemFXChrome.BOverly.ResetGlobalMF();}"/>
+						<menuseparator/>
+						<menuitem id="memfx-tbar-s-options" label="&memfx.label.options;" oncommand="{ MemFXChrome.BOverly.optionsDialog();}" />
+						<menuitem id="memfx-tbar-s-options-g" label="&memfx.label.blacklist;" oncommand="MemFXChrome.BOverly.globalDialog();" />
+						<menuitem id="memfx-tbar-s-restart" label="&memfx.label.restart;" oncommand="{ MemFXRunner.restartFF();}"/>
+						<menuseparator/>
+						<menuitem id="memfx-tbar-s-homepage" label="&memfx.label.homepage;" oncommand="{ MemFXChrome.BOverly.goHome();}"/>
+					</menupopup>
+				</toolbarbutton>
+		 </toolbarpalette>
+
+		<statusbar id="status-bar">
+			<statusbarpanel id="memfx-status-bar-panel" 
+			class="statusbarpanel-menuiconic"
+			insertbefore="statusbar-display"
+			collapsed="false"
+			persist="collapsed"
+			context="memory-fox-menu"
+			style="min-width: 16px; white-space: nowrap; padding: 0px;">
+			<image id="memory-fox-status-icon" style="cursor:pointer;"
+				src="chrome://memfx/skin/icons/icon_off.png"
+				onmouseover="MemFXChrome.BOverly.onMouseTooltip()" tooltiptext="&memfx.tooltip.open;" />
+				<!-- onclick="if(!event.button){ MemFXChrome.BOverly.putMFXprefs();MemFXChrome.BOverly.StartMF();}" --> 
+				<!-- ondblclick="MemFXChrome.BOverly.StopMF();" --> 			
+				<!-- (event.button == 2) Right-Mouse Clicked -->
+			</statusbarpanel>
+		</statusbar>
+	</overlay>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+
+<?xml-stylesheet type="text/css"
+  href="chrome://browser/skin/preferences/preferences.css" ?>
+  
+<?xml-stylesheet type="text/css"
+  href="chrome://memfx/skin/mfxOverlay.css" ?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://memfx/locale/prefwindow.dtd">
+
+<prefwindow 
+	title="&prefwindow.title;"
+	buttons="accept,cancel"
+	onload="MEMFX_PREFS.onload();"
+	ondialogaccept="MEMFX_PREFS.unload();"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<prefpane id="memfx_prefpane" label="&prefwindow.title;" onpaneload="centerWindowOnScreen();">
+
+	<script type="application/x-javascript" src="chrome://memfx/content/mfxOptions.js"/>
+	<script type="application/x-javascript">
+		<![CDATA[
+		var MEMFX_PREFS = {
+
+			onload: function()
+			{
+				MFXOpt.Opts.prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+				MFXOpt.Opts._branch = MFXOpt.Opts.prefService.getBranch("extensions.memfx.");
+
+				if( MFXOpt.Opts._branch )
+				{
+					document.getElementById("cb-pref-activateMFDisplayEvents").checked = MFXOpt.Opts._branch.getBoolPref("activateMFDisplayEvents");
+					
+					document.getElementById("cb-pref-activateVisualAcc").checked = MFXOpt.Opts._branch.getBoolPref("activateVisualAcc");
+
+					var newPrefDelayStartup = MFXOpt.Opts._branch.getIntPref("startupDelay");
+					document.getElementById("memfxOptDelayStartup").selectedIndex = newPrefDelayStartup;
+
+					var newPrefTabDelay = MFXOpt.Opts._branch.getIntPref("tabDelay");
+					document.getElementById("memfxOptTabDelay").value = newPrefTabDelay;
+
+					var newPrefPrimaryTimeout = MFXOpt.Opts._branch.getIntPref("primaryTimeout");
+					document.getElementById("memfxOptPrimaryTimeout").value = newPrefPrimaryTimeout;
+
+					document.getElementById("cb-pref-activateMFXEventLogging").checked = MFXOpt.Opts._branch.getBoolPref("activateMFXEventLogging");
+				}
+			},
+			unload: function()
+			{
+				var theBrowserPrefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("browser.preferences.");
+				if (!theBrowserPrefs.getBoolPref("instantApply")) {
+					MFXOpt.Opts.DoSetPrefActivateVisualAcc();
+					MFXOpt.Opts.DoSetPrefActivateMFDisplayEvents();
+
+					MFXOpt.Opts.DoSetPrefDelayStartup();
+					MFXOpt.Opts.DoSetPrefTabDelay();
+					MFXOpt.Opts.DoSetPrefPrimaryTimeout();
+					MFXOpt.Opts.DoSetPrefActivateMFXEventLogging();
+				}
+			},
+		};
+		]]>
+	</script>
+
+		<preferences>
+			<preference id="pref-startupDelay" 
+						name="extensions.memfx.startupDelay" type="int"/>
+			<preference id="pref-tabDelay" 
+						name="extensions.memfx.tabDelay" type="int"/>
+			<preference id="pref-global" 
+						name="extensions.memfx.global" type="bool"/>
+			<preference id="pref-primaryTimeout" 
+						name="extensions.memfx.primaryTimeout" type="int"/>
+			<preference id="pref-activateMFXEventLogging" 
+						name="extensions.memfx.activateMFXEventLogging" type="bool"/>
+			<preference id="pref-blacklist" 
+						name="extensions.memfx.blacklist" type="string"/>
+		</preferences>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.startup;"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.notif;"/>
+	<checkbox id="cb-pref-activateMFDisplayEvents" aria-labelledby="cb-pref-activateMFDisplayEvents" label="&prefwindow.activateMFDisplayEvents;" checked="false"/>
+	<checkbox id="cb-pref-activateVisualAcc" aria-labelledby="cb-pref-activateVisualAcc" label="&prefwindow.activateVisualAcc;" checked="false"/>
+	</groupbox>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.trecovery;"/>
+	<radiogroup id="memfxOptDelayStartup" onselect="{MFXOpt.Opts.DoSetPrefDelayStartup();}">
+	<hbox align="center">
+	<radio id="startUP0" aria-labelledby="startUP0" style="padding-left:5px" label="&prefwindow.zerom;" value="0"/>
+	<radio id="startUP1" aria-labelledby="startUP1" style="padding-left:5px" label="&prefwindow.onem;" value="1"/>
+	<radio id="startUP2" aria-labelledby="startUP2" style="padding-left:5px" label="&prefwindow.twom;" value="2"/>
+	<radio id="startUP3" aria-labelledby="startUP3" style="padding-left:5px" label="&prefwindow.threem;" value="3"/>
+	</hbox>
+	</radiogroup>
+	</groupbox>
+	</groupbox>
+
+<spacer flex="1"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.gsettings;"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.tselections;"/>
+	<radiogroup id="memfxOptTabDelay" onselect="MFXOpt.Opts.DoSetPrefTabDelay();">
+	<hbox align="center">
+	<radio id="tabDelay0" aria-labelledby="tabDelay0" style="padding-left:5px" label="&prefwindow.zerom;" value="0"/>
+	<radio id="tabDelay1" aria-labelledby="tabDelay1" style="padding-left:5px" label="&prefwindow.onem;" value="1"/>
+	<radio id="tabDelay2" aria-labelledby="tabDelay2" style="padding-left:5px" label="&prefwindow.twom;" value="2"/>
+	<radio id="tabDelay3" aria-labelledby="tabDelay3" style="padding-left:5px" label="&prefwindow.threem;" value="3"/>
+	</hbox>
+	</radiogroup>
+	</groupbox>
+
+	</groupbox>
+
+<spacer flex="1"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.backgtimer;"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.tsabgrecovery;"/>
+	<radiogroup id="memfxOptPrimaryTimeout" onselect="MFXOpt.Opts.DoSetPrefPrimaryTimeout();">
+	<hbox align="center">
+	<radio id="primaryTimeout1" aria-labelledby="primaryTimeout1" style="padding-left:5px" label="&prefwindow.onem;" value="1"/>
+	<radio id="primaryTimeout3" aria-labelledby="primaryTimeout3" style="padding-left:5px" label="&prefwindow.threem;" value="3"/>
+	<radio id="primaryTimeout5" aria-labelledby="primaryTimeout5" style="padding-left:5px" label="&prefwindow.fivem;" value="5"/>
+	<radio id="primaryTimeout10" aria-labelledby="primaryTimeout10" style="padding-left:5px" label="&prefwindow.tenm;" value="10"/>
+	<radio id="primaryTimeout15" aria-labelledby="primaryTimeout15" style="padding-left:5px" label="&prefwindow.fifteenm;" value="15"/>
+	<radio id="primaryTimeout30" aria-labelledby="primaryTimeout30" style="padding-left:5px" label="&prefwindow.thirtym;" value="30"/>
+	<radio id="primaryTimeout45" aria-labelledby="primaryTimeout45" style="padding-left:5px" label="&prefwindow.fortyfivem;" value="45"/>
+	<radio id="primaryTimeout60" aria-labelledby="primaryTimeout60" style="padding-left:5px" label="&prefwindow.sixtym;" value="60"/>
+	</hbox>
+	</radiogroup>
+	</groupbox>
+	</groupbox>
+
+<spacer flex="1"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.eventlog;"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.afom;"/>
+
+	<groupbox id="group_mfx_properties" style="padding-left:25px">
+	<caption label="&prefwindow.afomvalues;"/>
+
+	<row style="-moz-box-align:center">
+	<checkbox id="cb-pref-activateMFXEventLogging" aria-labelledby="cb-pref-activateMFXEventLogging" label="&prefwindow.activateMFXEventLogging;" checked="false"/>
+	</row>
+	</groupbox>
+	</groupbox>
+	</groupbox>
+</prefpane>
+</prefwindow>

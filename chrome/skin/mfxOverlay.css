@@ -1,0 +1,58 @@
+/* menuitem[label="mfx-hello"] {
+    display: none !important;
+}*/
+/* Resize Navigation Bar */
+/* #navigator-toolbox toolbar { max-height: 20px !important; } */
+
+#img_Show{ 
+	findbar,
+	#navigator-toolbox{
+	padding-top: 201px !important;
+	}
+
+	findbar,
+	#status-bar{
+	padding-bottom: 124px !important;
+	}
+}
+
+#img_Hide{ 
+	findbar,
+	#navigator-toolbox{
+	padding-top: 0px !important;
+	}
+
+	findbar,
+	#status-bar{
+	padding-bottom: 0px !important;
+	}
+}
+
+#mfx-hello
+{
+ background-color: transparent;
+ /* color: black ! important; */
+  /* display:  none !important; */
+  /* disabled: true !important;  */
+}
+#mfx-Explorer
+{
+  /* color: black ! important; */
+}
+
+#memfx-toolbar-button{list-style-image:url("chrome://memfx/skin/icons/toolbar-button-off.png");}
+#memfx-toolbar-button:hover{list-style-image:url("chrome://memfx/skin/icons/toolbar-button-off.png");}
+
+#memfx-toolbar-button[memfx-toolbar-button="on"] {
+   list-style-image: url("chrome://memfx/skin/icons/toolbar-button-on.png");
+   -moz-image-region: rect(0px 24px 24px 0px);
+}
+#memfx-toolbar-button[memfx-toolbar-button="off"] {
+   list-style-image: url("chrome://memfx/skin/icons/toolbar-button-off.png");
+   -moz-image-region: rect(0px 24px 24px 0px);
+}
+#memfx-toolbar-button[memfx-toolbar-button="gproc"] {
+   list-style-image: url("chrome://memfx/skin/icons/toolbar-button-gproc.png");
+   -moz-image-region: rect(0px 24px 24px 0px);
+}
+

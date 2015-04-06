@@ -1,0 +1,13 @@
+<!ENTITY memfx.label.menu "Memory Fox Next">
+<!ENTITY memfx.label.open "Activar Memory Fox Next - Sólo este navegador">
+<!ENTITY memfx.label.close "Desactivar Memory Fox Next - Sólo este navegador">
+<!ENTITY memfx.label2.open "Activar Memory Fox Next - Todos los procesos">
+<!ENTITY memfx.label2.close "Desactivar Memory Fox Next -  Todos los procesos">
+<!ENTITY memfx.label.options "Opciones">
+<!ENTITY memfx.label.blacklist "Lista negra">
+<!ENTITY memfx.label.restart "Reiniciar navegador">
+<!ENTITY memfx.label.homepage "Página principal de Memory Fox Next">
+<!ENTITY memfx.label.tray "Enviar Memory Fox Next a la bandeja del sistema">
+<!ENTITY memfx.tooltip.open "Activar Memory Fox Next para ver el actual WorkingSetSize">
+<!ENTITY memfx.mfxToolbar.label "Su botón de barra de herramientas">
+<!ENTITY memfx.mfxToolbar.tooltip "¡Botón de barra de herramientas para Memory Fox Next!">

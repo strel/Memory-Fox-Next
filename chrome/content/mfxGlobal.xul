@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+
+<?xml-stylesheet type="text/css"
+  href="chrome://browser/skin/preferences/preferences.css" ?>
+  
+<?xml-stylesheet type="text/css"
+  href="chrome://memfx/skin/mfxOverlay.css" ?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://memfx/locale/prefwindow.dtd">
+
+<prefwindow 
+	title="&prefwindow.title;"
+	buttons="accept,cancel"
+	onload="MEMFX_PREFS.onload();"
+	ondialogaccept="MEMFX_PREFS.unload();"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<prefpane id="memfx_prefpane" label="&prefwindow.gsettings;" onpaneload="centerWindowOnScreen();">
+
+	<script type="application/x-javascript" src="chrome://memfx/content/mfxGlobal.js"/>
+	<script type="application/x-javascript">
+		<![CDATA[
+		var MEMFX_PREFS = {
+
+			onload: function()
+			{
+				MFXGlobal.Procs.prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+				MFXGlobal.Procs._branch = MFXGlobal.Procs.prefService.getBranch("extensions.memfx.");
+
+				if( MFXGlobal.Procs._branch )
+				{
+					<!-- document.getElementById("cb-pref-global").checked = MFXGlobal.Procs._branch.getBoolPref("global"); -->
+
+					MFXGlobal.Procs.loadBlacklistProcesses();
+				}
+			},
+			unload: function()
+			{
+				var theBrowserPrefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("browser.preferences.");
+				if (!theBrowserPrefs.getBoolPref("instantApply")) {
+					<!-- MFXGlobal.Procs.DoSetPrefGlobal(); -->
+					MFXGlobal.Procs.DoSetPrefBlacklist();
+				}
+			},
+		};
+		]]>
+	</script>
+
+		<preferences>
+			<!-- <preference id="pref-global" 
+						name="extensions.memfx.global" type="bool"/> -->
+			<preference id="pref-blacklist" 
+						name="extensions.memfx.blacklist" type="string"/>
+		</preferences>
+
+<!--	<vbox style="padding: 2px 200px; background: rgb(255, 255, 255) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> -->
+	<groupbox id="group_mfx_blacklist" style="padding-left:25px">
+	<caption label="&prefwindow.global;"/>
+
+
+<!--	<row style="-moz-box-align:left">
+	<checkbox style="padding-left:5px" id="cb-pref-global" aria-labelledby="cb-pref-global" label="&prefwindow.recoverall;" checked="false"/>
+	</row>
+-->
+	<vbox>
+		<hbox align="left" width="250" >
+		<listbox id="ctrlProcessList" height="80px" width="375px" 
+			onselect="MFXGlobal.Procs.selectionHasChanged(this);"
+			preference="pref-blacklist"
+			onsynctopreference="MFXGlobal.Procs.saveBlacklistProcesses()">
+			<listhead>
+				<listheader label="&prefwindow.blacklist;"/>
+			</listhead>
+		</listbox>
+		</hbox>
+		<hbox align="left" width="250px" >
+			<textbox height="24px" width="250px" id="addTxt" onkeypress="MFXGlobal.Procs.addKeyPress(event)" oninput="MFXGlobal.Procs.addInput(event)" />
+			<button id="add-Btn" label="&prefwindow.addproc;" accesskey="" oncommand="MFXGlobal.Procs.addItem()" disabled="true"/>
+		</hbox>
+		<hbox align="left" >
+			<button id="remove-Btn" label="&prefwindow.remproc;" width="375px" accesskey="" oncommand="MFXGlobal.Procs.removeListedProcess();" disabled="true"/>
+		</hbox>
+	</vbox>
+	</groupbox>
+</prefpane>
+</prefwindow>

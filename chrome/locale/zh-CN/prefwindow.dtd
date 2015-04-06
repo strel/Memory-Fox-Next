@@ -1,0 +1,38 @@
+<!ENTITY prefwindow.title "Memory Fox Next 选项">
+<!ENTITY prefwindow.startup "Memory Fox Next 启动设置">
+<!ENTITY prefwindow.notif "以下选项允许 Memory Fox Next 事件消息弹出或播放声音">
+<!ENTITY prefwindow.activateMFDisplayEvents "启动首个浏览器自动运行 Memory Fox Next">
+<!ENTITY prefwindow.activateVisualAcc "激活 JAWS 声音提示">
+<!ENTITY prefwindow.trecovery "以下选项设置每次恢复内存的等待时间。">
+<!ENTITY prefwindow.zerom "0 分钟">
+<!ENTITY prefwindow.onem "1 分钟">
+<!ENTITY prefwindow.twom "2 分钟">
+<!ENTITY prefwindow.threem "3 分钟">
+<!ENTITY prefwindow.fivem "5 分钟">
+<!ENTITY prefwindow.tenm "10 分钟">
+<!ENTITY prefwindow.fifteenm "15 分钟">
+<!ENTITY prefwindow.thirtym "30 分钟">
+<!ENTITY prefwindow.fortyfivem "45 分钟">
+<!ENTITY prefwindow.sixtym "60 分钟">
+<!ENTITY prefwindow.gsettings "Memory Fox Next 通用设置">
+<!ENTITY prefwindow.tselections "以下选项设置每个标签页恢复内存的时间间隔。">
+<!ENTITY prefwindow.backgtimer "Memory Fox Next 在 Firefox 运行或空闲时的后台恢复内存间隔">
+<!ENTITY prefwindow.tsabgrecovery "以下选项设置独立工作集恢复内存时间间隔。">
+<!ENTITY prefwindow.eventlog "Memory Fox Next 事件日志选项">
+<!ENTITY prefwindow.afom "日志记录，可从事件查看器中可以看到AFOM的【来源】列。">
+<!ENTITY prefwindow.afomvalues "包含 1. 请求: [ 运行 AFOM ], 2. 动作: [ 切换标签 ], 3. 请求: [ PeriodicRAM ], 4. 请求: [ 停止 AFOM ]">
+<!ENTITY prefwindow.activateMFXEventLogging "Activate Event Logging For Memory Fox Next">
+<!ENTITY prefwindow.app_1 "Firefox 浏览器">
+<!ENTITY prefwindow.activateMFXonStartup "启动首个浏览器自动运行 Memory Fox Next">
+<!ENTITY prefwindow.isMFXRunning "Memory Fox 正在运行">
+<!ENTITY prefwindow.tabDelay "切换标签页时延迟内存恢复">
+<!ENTITY prefwindow.gsettings "全局内存恢复选项">
+<!ENTITY prefwindow.global "全局进程内存恢复 ">
+<!ENTITY prefwindow.recoverall "为任务管理器中的所有运行中的进程内存恢复">
+<!ENTITY prefwindow.blacklist "进程黑名单">
+<!ENTITY prefwindow.addproc "添加进程名">
+<!ENTITY prefwindow.remproc "从列表中清除进程">
+<!ENTITY prefwindow.startupDelay "所以标签页加载完成后恢复内存">
+<!ENTITY prefwindow.primaryTimeout "后台内存恢复 (Primary) 超时">
+<!ENTITY prefwindow.currentVersion "0.0">
+<!ENTITY pane1.title "Memory Fox Next 附加组件配置">

@@ -1,0 +1,13 @@
+<!ENTITY memfx.label.menu "Memory Fox Next">
+<!ENTITY memfx.label.open "激活 Memory Fox Next - 仅浏览器">
+<!ENTITY memfx.label.close "屏蔽 Memory Fox Next - 仅浏览器">
+<!ENTITY memfx.label2.open "激活 Memory Fox Next - 所有进程">
+<!ENTITY memfx.label2.close "屏蔽 Memory Fox Next -  所有进程">
+<!ENTITY memfx.label.options "选项">
+<!ENTITY memfx.label.blacklist "黑名单">
+<!ENTITY memfx.label.restart "重启浏览器">
+<!ENTITY memfx.label.homepage "Memory Fox Next 主页">
+<!ENTITY memfx.label.tray "Send Memory Fox Next To System Tray">
+<!ENTITY memfx.tooltip.open "Activate Memory Fox Next To See Current WorkingSetSize">
+<!ENTITY memfx.mfxToolbar.label "Your Toolbar Button">
+<!ENTITY memfx.mfxToolbar.tooltip "Toolbar button for Memory Fox Next!">
